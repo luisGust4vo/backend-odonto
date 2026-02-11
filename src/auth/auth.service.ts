@@ -22,6 +22,7 @@ export class AuthService {
       email: dto.email,
       name: dto.name,
       passwordHash,
+      termsAccepted: dto.termsAccepted,
     });
 
     // opcional: já devolver token ao cadastrar

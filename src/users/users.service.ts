@@ -22,7 +22,12 @@ export class UsersService {
       .getOne();
   }
 
-  async createUser(input: { email: string; name: string; passwordHash: string }) {
+  async createUser(input: {
+    email: string;
+    name: string;
+    passwordHash: string;
+    termsAccepted: boolean;
+  }) {
     const user = this.repo.create(input);
     return this.repo.save(user);
   }

@@ -22,6 +22,9 @@ export class User {
   @Column({ type: 'varchar', length: 255, select: false })
   passwordHash: string;
 
+  @Column({ type: 'boolean', default: false })
+  termsAccepted: boolean;
+
   @CreateDateColumn()
   createdAt: Date;
 
