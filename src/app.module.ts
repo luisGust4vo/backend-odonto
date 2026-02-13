@@ -5,6 +5,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+import { CalendarModule } from './calendar/calendar.module';
+import { ExpensesModule } from './expenses/expenses.module';
+import { ReportsModule } from './reports/reports.module';
+import { RetentionModule } from './retention/retention.module';
+import { RecordsModule } from './records/records.module';
+import { OdontogramModule } from './odontogram/odontogram.module';
+import { AiModule } from './ai/ai.module';
 
 @Module({
   imports: [
@@ -16,11 +23,17 @@ import { UsersModule } from './users/users.module';
       password: process.env.DB_PASS ?? 'postgres',
       database: process.env.DB_NAME ?? 'app',
       autoLoadEntities: true,
-      synchronize: true, // DEV ONLY
+      synchronize: true,
     }),
-
     AuthModule,
     UsersModule,
+    CalendarModule,
+    ExpensesModule,
+    ReportsModule,
+    RetentionModule,
+    RecordsModule,
+    OdontogramModule,
+    AiModule,
   ],
   controllers: [AppController],
   providers: [AppService],

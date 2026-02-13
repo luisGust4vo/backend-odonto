@@ -3,17 +3,16 @@ import { AuthService } from './auth.service';
 import { RegisterDto } from './dto/register.dto';
 import { LoginDto } from './dto/login.dto';
 
-@Controller('auth')
+@Controller()
 export class AuthController {
   constructor(private readonly auth: AuthService) {}
 
-  @Post('register')
+  @Post(['auth/register', 'register'])
   register(@Body() dto: RegisterDto) {
-    console.log(dto);
     return this.auth.register(dto);
   }
 
-  @Post('login')
+  @Post(['auth/login', 'login'])
   login(@Body() dto: LoginDto) {
     return this.auth.login(dto);
   }
