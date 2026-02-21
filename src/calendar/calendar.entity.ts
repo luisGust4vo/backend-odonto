@@ -1,4 +1,10 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity('calendar_events')
 export class CalendarEventEntity {
@@ -8,16 +14,16 @@ export class CalendarEventEntity {
   @Column({ type: 'varchar', length: 160 })
   title: string;
 
-  @Column({ type: 'date' })
-  start: string;
+  @Column({ type: 'timestamp' })
+  start: Date;
 
-  @Column({ type: 'date', nullable: true })
-  end: string | null;
+  @Column({ type: 'timestamp', nullable: true })
+  end: Date | null;
 
-  @Column({ type: 'varchar', length: 40, default: 'Primary' })
+  @Column({ type: 'varchar', length: 40, default: 'primary' })
   calendar: string;
 
-  @Column({ type: 'boolean', default: true })
+  @Column({ type: 'boolean', default: false })
   allDay: boolean;
 
   @CreateDateColumn()

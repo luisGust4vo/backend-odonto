@@ -23,7 +23,7 @@ import { AiModule } from './ai/ai.module';
       password: process.env.DB_PASS ?? 'postgres',
       database: process.env.DB_NAME ?? 'app',
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: process.env.DB_SYNCHRONIZE === "true",
     }),
     AuthModule,
     UsersModule,
