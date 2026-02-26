@@ -4,10 +4,10 @@ export class CreateCalendarEventDto {
   @IsString()
   @MinLength(1)
   @MaxLength(160)
-  title: string;
+  title!: string;
 
   @IsISO8601()
-  start: string;
+  start!: string;
 
   @IsOptional()
   @IsISO8601()

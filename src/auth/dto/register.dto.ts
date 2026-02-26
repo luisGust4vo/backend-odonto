@@ -9,19 +9,19 @@ import {
 
 export class RegisterDto {
   @IsEmail()
-  email: string;
+  email!: string;
 
   @IsString()
   @MinLength(2)
   @MaxLength(120)
-  name: string;
+  name!: string;
 
   @IsString()
   @MinLength(8)
   @MaxLength(72)
-  password: string;
+  password!: string;
 
   @IsBoolean()
   @Equals(true, { message: 'Você deve aceitar os termos e a política de privacidade' })
-  termsAccepted: boolean;
+  termsAccepted!: boolean;
 }
