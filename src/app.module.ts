@@ -12,6 +12,7 @@ import { RetentionModule } from './retention/retention.module';
 import { RecordsModule } from './records/records.module';
 import { OdontogramModule } from './odontogram/odontogram.module';
 import { AiModule } from './ai/ai.module';
+import { CrawlerModule } from './crawler/crawler.module';
 
 @Module({
   imports: [
@@ -34,6 +35,7 @@ import { AiModule } from './ai/ai.module';
     RecordsModule,
     OdontogramModule,
     AiModule,
+    CrawlerModule,
   ],
   controllers: [AppController],
   providers: [AppService],
